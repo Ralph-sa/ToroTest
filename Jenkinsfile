@@ -9,6 +9,7 @@ pipeline {
 
     stage('2') {
       steps {
+        sleep 2
         echo '2'
       }
     }
@@ -21,6 +22,7 @@ pipeline {
 
     stage('4') {
       steps {
+        sleep 2
         echo '4'
       }
     }

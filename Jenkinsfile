@@ -1,31 +1,23 @@
 pipeline {
-  agent any
-  stages {
-    stage('1') {
-      steps {
-        echo 'HelloWorld'
-      }
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000 -p 5000:5000' 
+        }
     }
-
-    stage('2') {
-      steps {
-        sleep 2
-        echo '2'
-      }
+    environment {
+        CI = 'true'
     }
-
-    stage('3') {
-      steps {
-        sleep 2
-      }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
     }
-
-    stage('4') {
-      steps {
-        sleep 2
-        echo '4'
-      }
-    }
-
-  }
 }

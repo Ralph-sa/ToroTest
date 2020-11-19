@@ -16,6 +16,7 @@ pipeline {
     stage('3') {
       steps {
         echo '333'
+        echo 'rrrr'
       }
     }
 

@@ -17,6 +17,7 @@ pipeline {
       steps {
         echo '333'
         echo 'rrrr'
+        sh 'echo "haha"'
       }
     }
 

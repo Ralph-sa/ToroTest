@@ -15,6 +15,9 @@ pipeline {
         qyWechatNotification(webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39a9d06a-261f-4dc8-8deb-e7dcca3b48db', mentionedId: 'ALL', aboutSend: true, startBuild: true)
       }
     }
+    post {
+       
+    }
 
   }
 }

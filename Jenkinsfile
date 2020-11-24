@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('1') {
-      steps {
-        sleep 2
-      }
-    }
-
     stage('2') {
       steps {
         echo '22222222'
@@ -18,7 +12,7 @@ pipeline {
         echo '333'
         echo 'rrrr'
         sh 'echo "haha"'
-        qyWechatNotification(webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39a9d06a-261f-4dc8-8deb-e7dcca3b48db', mentionedId: 'ALL')
+        qyWechatNotification(webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39a9d06a-261f-4dc8-8deb-e7dcca3b48db', mentionedId: 'ALL', successSend: true, aboutSend: true, startBuild: true)
       }
     }
 

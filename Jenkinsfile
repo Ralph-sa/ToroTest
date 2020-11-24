@@ -12,10 +12,9 @@ pipeline {
         echo '333'
         echo 'rrrr'
         sh 'echo "haha"'
-        qyWechatNotification(webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39a9d06a-261f-4dc8-8deb-e7dcca3b48db', mentionedId: 'ALL', aboutSend: true, startBuild: true)
+        qyWechatNotification(webhookUrl: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39a9d06a-261f-4dc8-8deb-e7dcca3b48db', startBuild: true, successSend: true)
       }
     }
-
 
   }
 }
